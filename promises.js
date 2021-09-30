@@ -30,11 +30,21 @@ function createPosts(post) {
 //   getPosts()
 // });
 
-// Promise.all
-const promise1 = Promise.resolve('Hello world');
-const promise2 = 12;
-const promise3 = new Promise((resolve, reject) => 
-  setTimeout(resolve, 2000, 'Goodbye')
-)
+// async await
+async function init() {
+  await createPosts({ title: "Post three", body: "This is post three" });
 
-Promise.all([promise1, promise2, promise3]).then(values => console.log(values))
+  getPosts();
+}
+
+init();
+
+// Promise.all
+// const promise1 = Promise.resolve('Hello world');
+// const promise2 = 12;
+// const promise3 = new Promise((resolve, reject) => 
+//   setTimeout(resolve, 2000, 'Goodbye')
+// )
+
+// Promise.all([promise1, promise2, promise3]).then(values => console.log(values))
+
